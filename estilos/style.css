@@ -12,6 +12,7 @@
 }
 body{
     background-color: var(--cor0);
+    /* margin: 100px; */
 }
 p.usuario::before{
     content: 'Publicado por ';
