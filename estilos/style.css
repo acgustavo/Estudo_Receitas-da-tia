@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+:root{
+    --cor0: #1E1E1E;
+    --cor1: #29B851;
+    --cor2: #33954E;
+    --cor3: #13682B;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: var(--cor0);
+}
+p.usuario::before{
+    content: 'Publicado por ';
+}
+p.data::before{
+    content: 'Review criado em ';
+}
+header{
+    background-color: var(--cor3);
+}
+header > div{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+header h1 {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 -15px;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 40px;
+}
+main{
+background-color: white;
+}
