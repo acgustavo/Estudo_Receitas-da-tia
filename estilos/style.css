@@ -16,15 +16,16 @@
     content: 'Review criado em ';
 }
 /* .container {
-    display: flex;
+    display: ;
     flex-direction: column;
+    flex-wrap: nowrap;
 } */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--corHeaderFooter);
-    height: 60px;
+    min-height: 60px;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -32,7 +33,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .artigo {
     background-color: var(--cortextos);
@@ -43,6 +47,15 @@
     display: flex;
     /* Faz com que o filho (item) desça uma linha */
     flex-wrap: wrap;
+}
+.texto {
+    background-color: var(--cortextos);
+    text-align: justify;
+    padding-left: 100px;
+    padding-right: 60px;
+    padding-top: 60px;
+    min-width: 300px;
+    flex: 1;
 }
 .foto {
     background-color: var(--cortextos);
@@ -60,16 +73,9 @@
 .foto > img{
     max-width: 100%;
 }
-.texto {
-    background-color: var(--cortextos);
-    text-align: justify;
-    padding-left: 100px;
-    padding-right: 60px;
-    padding-top: 60px;
-    min-width: 300px;
-    flex: 1;
-}
 .comentario {
+    flex-basis: 100%;
+    width: 0;
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -79,13 +85,16 @@
     padding-right: 100px;
     padding-top: 108px;
     padding-bottom: 48px;
+    
 }
 .comentario > div{
+    max-width: 1950px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 .comentario > div > img{
+    max-width: 124px;
+    max-height: 124px;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-right: 32px;
@@ -97,18 +106,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 .footer {
     background-color: var(--corHeaderFooter);
+}
+.footer > div{
+    display: flex;
+    flex: 1;
+    gap: 30px;
+    justify-content: space-between;
+    padding: 48px;
+    flex-wrap: wrap;
+}
+.footer > div > p{
+    min-width: 300px;
+    flex: 0.3;
 }
 .footer > p{
     text-align: center;
     padding-bottom: 48px;
     padding-left: 100px;
     padding-right: 100px;
-}
-.footer > div{
-    display: grid;
-    grid-template-columns:0.15fr 0.15fr 0.30fr 0.40fr;
-    padding: 48px;
 }
