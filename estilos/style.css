@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
 :root{
-    --cor0: #1E1E1E;
-    --cor1: #29B851;
-    --cor2: #33954E;
     --corHeaderFooter: #13682B;
     --cortextos: #ffffff;
 }
@@ -11,7 +8,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* overflow: hidden; */
 }
 .usuario::before{
     content: 'Publicado por ';
@@ -19,47 +15,51 @@
 .data::before{
     content: 'Review criado em ';
 }
-.container {
+/* .container {
     display: flex;
     flex-direction: column;
-    /* height: 100vh; */
-}
-
+} */
 .header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--corHeaderFooter);
     height: 60px;
     padding-left: 100px;
     padding-right: 100px;
 }
-
+.header > nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 .artigo {
     background-color: var(--cortextos);
-    
     /* Proporção que deve expandir. Se ambos estão 1, ambos serão iguais.
     Se um for 1 e o outro 2, o segundo será duas vezes maior que o primeiro.
     */
     flex: 1;
     display: flex;
-
     /* Faz com que o filho (item) desça uma linha */
     flex-wrap: wrap;
 }
-
 .foto {
     background-color: var(--cortextos);
-    padding-right: 60px;
+    padding-right: 100px;
     padding-top: 60px;
-    min-width: 510px;
+    min-width: 450px;
     flex: 0.3;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1023px) {
         min-width: 100%;
         padding-left: 100px;
         flex: 1;        
     }
 }
-
+.foto > img{
+    max-width: 100%;
+}
 .texto {
     background-color: var(--cortextos);
     text-align: justify;
@@ -69,7 +69,6 @@
     min-width: 300px;
     flex: 1;
 }
-
 .comentario {
     display: flex;
     flex-direction: column;
@@ -80,7 +79,6 @@
     padding-right: 100px;
     padding-top: 108px;
     padding-bottom: 48px;
-    
 }
 .comentario > div{
     display: flex;
@@ -96,22 +94,18 @@
     padding-bottom: 40px;
 }
 .comentarioRodape{
-    display: grid;
-    grid-template-columns:.5fr .5fr;
-}
-.data{
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .footer {
     background-color: var(--corHeaderFooter);
 }
 .footer > p{
-
     text-align: center;
     padding-bottom: 48px;
     padding-left: 100px;
     padding-right: 100px;
-
 }
 .footer > div{
     display: grid;
