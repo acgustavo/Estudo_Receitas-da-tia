@@ -4,44 +4,117 @@
     --cor0: #1E1E1E;
     --cor1: #29B851;
     --cor2: #33954E;
-    --cor3: #13682B;
+    --corHeaderFooter: #13682B;
+    --cortextos: #ffffff;
 }
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
 }
-body{
-    background-color: var(--cor0);
-    /* margin: 100px; */
-}
-p.usuario::before{
+.usuario::before{
     content: 'Publicado por ';
 }
-p.data::before{
+.data::before{
     content: 'Review criado em ';
 }
-header{
-    background-color: var(--cor3);
-}
-header > div{
+.container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    /* height: 100vh; */
+}
+
+.header {
+    display: flex;
+    background-color: var(--corHeaderFooter);
     height: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
-header h1 {
+
+.artigo {
+    background-color: var(--cortextos);
+    
+    /* Proporção que deve expandir. Se ambos estão 1, ambos serão iguais.
+    Se um for 1 e o outro 2, o segundo será duas vezes maior que o primeiro.
+    */
+    flex: 1;
+    display: flex;
+
+    /* Faz com que o filho (item) desça uma linha */
+    flex-wrap: wrap;
+}
+
+.foto {
+    background-color: var(--cortextos);
+    padding-right: 60px;
+    padding-top: 60px;
+    min-width: 510px;
+    flex: 0.3;
+
+    @media screen and (max-width: 1000px) {
+        min-width: 100%;
+        padding-left: 100px;
+        flex: 1;        
+    }
+}
+
+.texto {
+    background-color: var(--cortextos);
+    text-align: justify;
+    padding-left: 100px;
+    padding-right: 60px;
+    padding-top: 60px;
+    min-width: 300px;
+    flex: 1;
+}
+
+.comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    background-color: var(--cortextos);
+    text-align: justify;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 108px;
+    padding-bottom: 48px;
+    
+}
+.comentario > div{
     display: flex;
     align-items: center;
-    height: 100%;
-    margin: 0 -15px;
+    justify-content: center;
 }
-header nav{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin: 0 40px;
+.comentario > div > img{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 32px;
 }
-main{
-background-color: white;
+.comentarioTexto > p{
+    padding-bottom: 40px;
+}
+.comentarioRodape{
+    display: grid;
+    grid-template-columns:.5fr .5fr;
+}
+.data{
+    text-align: right;
+}
+.footer {
+    background-color: var(--corHeaderFooter);
+}
+.footer > p{
+
+    text-align: center;
+    padding-bottom: 48px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+.footer > div{
+    display: grid;
+    grid-template-columns:0.15fr 0.15fr 0.30fr 0.40fr;
+    padding: 48px;
 }
